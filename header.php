@@ -1,9 +1,17 @@
-<!DOCUTYPE>
+<!DOCTYPE>
 <?php 
 	include('functions.php');
-	if($_GET['p']){
-		$data = get_singles();
-	}
+    if ( isset($_GET['p']) )
+    {
+    	if ( $_GET['p'] )
+        {
+    		$data = get_singles();
+    	}
+    }
+    else
+    {
+        $data = array();
+    }
 ?>
 <html>
 <head>
