@@ -1,0 +1,65 @@
+$sLightGreen: #fbfcf7;
+$lightGreen: #f6f7f2;
+$medGreen: #bcd653;
+$darkGreen: #a3ba49;
+$medGreen2: #afc74e;
+$black: #1a1a1a;
+
+*{
+	box-sizing:border-box;
+}
+body, html{
+	margin:0;
+	padding:0;
+	background:$lightGreen;
+	font-family:arial, helvetica, sans-serif;
+	color:$black;
+	font-size:14px;
+}
+
+.container{
+	width:100%;
+	float:left;
+	clear:left;
+}
+
+.internal{
+	max-width:1024px;
+	margin:0 auto;
+}
+
+$mobile-width: 320px;
+$big-mobile-width: 540px;
+$tablet-width: 768px;
+$big-tablet-width: 850px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+  @media (min-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin big-mobile {
+  @media (min-width: #{$big-mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin big-tablet {
+  @media (min-width: #{$big-tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}

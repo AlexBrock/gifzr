@@ -1,0 +1,30 @@
+.header.container{
+	background:#1a1a1a;
+	height:40px;
+	padding-left:10px;
+	padding-right:10px;
+
+	@include desktop{
+		padding-left:0px;
+		padding-right:0px;
+	}
+}
+
+.logo{
+	padding-top:5px;
+	a{
+		text-decoration:none;
+		color:$medGreen;
+		font-weight:bold;
+		font-size:2em;
+		span{
+			font-size:0.58em;
+		}
+	}
+	span{
+		color:$lightGreen;
+		text-transform:uppercase;
+		clear:left;
+		font-size:0.8em;
+	}
+}

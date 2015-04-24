@@ -1,0 +1,7 @@
+Options +FollowSymlinks
+RewriteEngine On
+ 
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^([^/]+)$ single.php?p=$1 [L]
