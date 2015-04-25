@@ -1,7 +1,11 @@
 <?php
 
+function get_db() {
+    return new mysqli("localhost", "root", "root", "gifzr");
+}
+
 function post_feed(){
-	$dbh = new mysqli("localhost", "root", "root", "gifzr");
+	$dbh = get_db();
     $date = date('Y-m-d');
     $sql = 'SELECT * FROM `gifs` WHERE DATE(date) <= DATE("' . $date .'") ORDER BY date DESC';
     $result = $dbh->query($sql);
@@ -15,7 +19,7 @@ function post_feed(){
 }
 
 function get_singles(){
-	$dbh = new mysqli("localhost", "root", "root", "gifzr");
+	$dbh = get_db();
 	$postSlug = $_GET['p'];
 	if($postSlug){
 	    $sql = 'SELECT * FROM `gifs` WHERE slug = "' . $postSlug .'"';
@@ -27,7 +31,7 @@ function get_singles(){
 }
 
 function users($un, $pw){
-	$dbh = new mysqli("localhost", "root", "root", "gifzr");
+	$dbh = get_db();
 	$username = $un;
 	$password = $pw;
 	$sql = 'SELECT * FROM `users` WHERE username ="' . $un . '" AND password ="' . $pw . '"';
