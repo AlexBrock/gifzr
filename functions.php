@@ -2,6 +2,8 @@
 
 function get_db() {
     return new mysqli("localhost", "root", "root", "gifzr");
+    //return new mysqli("localhost", "gifzr_main", "@gifzr_admin", "gifzr");
+
 }
 
 function post_feed(){
@@ -36,13 +38,13 @@ function users($un, $pw){
 	$password = $pw;
 	$sql = 'SELECT * FROM `users` WHERE username ="' . $un . '" AND password ="' . $pw . '"';
 	$result = $dbh->query($sql);
+	$result = mysqli_fetch_assoc($result);
+
 	if($result){
-		$result = mysqli_fetch_assoc($result);
-		return($result);
+		return('true');
 	}else{
 		return('error');
 	}
-
 }
 	
 

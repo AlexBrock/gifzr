@@ -1,16 +1,13 @@
-<?php include('header.php'); ?>
-    <?php 
-    session_set_cookie_params(3600,"/");
-    session_start(); ?>
+<?php 
+session_start();
+include('header.php'); ?>
+
     <div class="container">
         <?php 
-        if($_SESSION['user_id']){
-            $loggedIn = true;
-        }else{
-            $loggedIn = false;
-        }
+        // $loggedIn = false;
 
-        if($loggedIn = false){ ?>
+        if( !isset($_SESSION['user_id']) ) {
+           ?>
 
             <div class="login">
                 <h2>Add content you want? Login you must.</h2>

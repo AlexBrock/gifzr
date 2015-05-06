@@ -45,7 +45,7 @@ $title = 'Daily Gif';
 $slug  = 'daily-gif-' . $gifName;
 $gif   = 'uploads/' . $gifName . '/' . $_FILES['gif']['name'];
 $jpg   = 'uploads/' . $gifName . '/' . $_FILES['jpg']['name'];
-$desc  = $_POST['description'];
+$desc  = addslashes($_POST['description']);
 $cat   = $_POST['cats'];
 $cat   = implode(',', $cat);
 
